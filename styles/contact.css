@@ -1,0 +1,83 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(
+        to bottom,
+        #145277,
+        #24718f,
+        #3d90a5,
+        #5eb0b9,
+        #83d0cb
+      )
+      no-repeat;
+  }
+  
+  #container {
+    height: 100%;
+    width: 100%;
+    background: url(/img/Letter_re.svg);
+    
+  }
+  
+  /* nav bar */
+  
+  .cat-logo {
+    margin: 30px 0 0 6rem;
+    border-radius: 50%;
+    height: 5rem;
+    background: #5eb0b9;
+    box-shadow: rgb(0, 0, 0) 0px 13px 27px -5px,
+      rgba(255, 255, 255, 0) 0px 8px 16px -8px;
+  }
+  
+  .logos h2 {
+    margin: -2rem 0 0 4rem;
+    font-weight: bolder;
+  }
+  
+  nav {
+    position: fixed;
+    height: 8rem;
+    bottom: 30rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #5eb0b9;
+    color: #fff;
+    z-index: 1;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  ul {
+    margin: 3rem;
+    display: flex;
+    list-style: none;
+  }
+  
+  li {
+    padding: 20px;
+    font-weight: bold;
+    font-size: larger;
+  }
+  
+  li a {
+      text-decoration: none;
+      color: #fff;
+  }
+
+  /* footer */
+
+footer {
+    height: 5rem;
+    background: #05668d86;
+  }
+  
+  footer p {
+    padding-top: 2.5rem;
+    text-align: center;
+    font-size: larger;
+  }

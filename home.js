@@ -65,7 +65,7 @@ let books = [
 let inp = document.querySelector(".search");
 let inpVal = inp.value.toUpperCase();
 let sec = document.getElementById("cards");
-let hed = document.querySelector("header");
+let hed = document.querySelector(".search-sec");
 let sec2 = document.querySelector(".slider");
 
 // functions
@@ -84,8 +84,9 @@ let sec2 = document.querySelector(".slider");
 // searchBooks()
 
 let renderBooks = () => {
+  sec.innerHTML = `<h1 class="sec-title">Trending Books</h1>`;
   for (let i = 0; i < books.length; i++) {
-    sec.innerHTML += `
+    sec.innerHTML += ` 
             <div id="${i}" class="card1">
             <img src="${books[i].image}" alt="" class="img1"/>
             <i class="bi "bi-star" change"></i>
@@ -95,6 +96,26 @@ let renderBooks = () => {
 };
 
 renderBooks();
+
+// favorite
+let fav = (i) => {
+  let star = document.querySelector(`#star-${i}`);
+   star.classList.remove("bi-star");
+   star.classList.toggle("bi-star-fill");
+  // if (star.contains == "bi-star") {
+   
+  // } 
+  // else {
+  //   star.classList.remove("bi-star-fill");
+  //   star.classList.add("bi-star");
+  // }
+};
+
+//  let unfav = (i) => {
+//   let star1 = document.querySelector(`#star-${i}`);
+//   star1.classList.remove('bi-star-fill')
+//   star1.classList.add('bi-star');
+//  }
 
 // description
 
@@ -107,18 +128,6 @@ const showMore = (i) => {
           <h1>${books[i].title}</h1>
           <h3>by: ${books[i].author}</h3>
           <p>${books[i].desc}</p>
-          <i id="star-${i}" class="bi bi-star" onclick='showMore(${i})'></i>
+          <i onclick='fav(${i})' id="star-${i}" class="bi bi-star"></i>
         </div>`;
 };
-
-// favorite
-let fav = document.querySelector(`#star-${i}`);
-console.log(fav);
-
-let fav = (i) => {
-    if (fav.contains("bi-star")) {
-        fav.classList.remove("bi-star");
-
-    }
-
-});

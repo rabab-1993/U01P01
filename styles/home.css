@@ -26,38 +26,31 @@ body {
 /* nav bar */
 
 .cat-logo {
-  margin: 10px 0 0 10px;
+  margin: 30px 0 0 6rem;
   border-radius: 50%;
-  height: 7rem;
-  background: #625079b9;
+  height: 5rem;
+  background: #5eb0b9;
   box-shadow: rgb(0, 0, 0) 0px 13px 27px -5px,
     rgba(255, 255, 255, 0) 0px 8px 16px -8px;
 }
 
 .logos h2 {
-  margin: 1rem;
-  color: #fff;
-}
-
-.cloud {
-  position: absolute;
-  bottom: 400px;
-  width: 100%;
-  height: 30rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background: #fff;
-}
-
-nav h2 {
-  text-shadow: 2px 2px 4px #000000;
+  margin: -2rem 0 0 4rem;
+  color: #4088b1;
+  font-weight: bolder;
 }
 
 nav {
-  position: relative;
+  position: fixed;
+  height: 8rem;
+  bottom: 30rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: #fff;
+  color: #5eb0b9;
+  background: #fff;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 ul {
@@ -68,22 +61,21 @@ ul {
 
 li {
   padding: 20px;
-  cursor: pointer;
   font-weight: bold;
   font-size: larger;
 }
 
-.home {
+li a {
     text-decoration: none;
-    color: #fff;
+    color: #5eb0b9;
 }
-/* header */
+/* search sec */
 
-header {
+.search-sec {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: #fff;
-  /* background: linear-gradient(150deg, rgba(255, 255, 255, 0.5), rgb(255, 255, 255, 0.1)); */
+  /* background: #fff; */
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.5), rgb(255, 255, 255, 0.1));
   border-radius: 20px;
   width: 60rem;
   margin: auto;
@@ -139,6 +131,9 @@ form {
    display: flex;
    width: calc(120px * 18);
 }
+.sec-title {
+  color: #fff;
+}
 
 .card1 {
   width: 100%;
@@ -186,7 +181,6 @@ form {
 } 
 
 .more-bttn {
-  /* display: none; */
   border: none;
   border-radius: 6px 0 0 6px;
   width: auto;
@@ -206,7 +200,7 @@ form {
 /* description section */
 
 .fav-sec {
-  background: #fff;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.5), rgb(255, 255, 255, 0.4));
   border-radius: 20px;
   width: 60rem;
   height: auto;
@@ -215,7 +209,8 @@ form {
   align-items: center;
   margin: 10rem;
   padding: 5rem;
-  color: #24637cd8;
+  color: #24637c;
+  font-weight: bold;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -231,14 +226,17 @@ form {
   cursor: pointer;
 }
 
+.bi-star:active  {
+  transition: 0.7s ease;
+}
 
-.bi-star {
+.bi-star, .bi-star-fill {
   margin-top: 1rem;
   font-size: 3rem;
   font-weight: bolder;
   /* position: absolute;
   top: 50%; */
-  color: #0bbdb1b2;
+  color: #EBF2FA;
   transition: 0.7s ease;
 }
 
@@ -250,7 +248,7 @@ footer {
 }
 
 footer p {
-  padding-top: 25px;
+  padding-top: 2.5rem;
   text-align: center;
   font-size: larger;
 }
