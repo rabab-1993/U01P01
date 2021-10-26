@@ -26,10 +26,14 @@ let books = [
   },
   {
     id: 3,
-    title: "A Game of Thrones",
-    author: "George R. R. Martin",
+    title: "Seraphina",
+    author: "Rachel Hartman",
     image: "img/im4.jpg",
-    desc: `Winter is coming. Such is the stern motto of House Stark, the northernmost of the fiefdoms that owe allegiance to King Robert Baratheon in far-off King’s Landing.`,
+    desc: `In the kingdom of Goredd, dragons and humans live and work side by side – while below the surface, tensions and hostility simmer. 
+
+    The newest member of the royal court, a uniquely gifted musician named Seraphina, holds a deep secret of her own. One that she guards with all of her being.
+    
+    When a member of the royal family is brutally murdered, Seraphina is drawn into the investigation alongside the dangerously perceptive—and dashing—Prince Lucien. But as the two uncover a sinister plot to destroy the wavering peace of the kingdom, Seraphina’s struggle to protect her secret becomes increasingly difficult… while its discovery could mean her very life.`,
   },
   {
     id: 4,
@@ -47,10 +51,12 @@ let books = [
   },
   {
     id: 6,
-    title: "City of Bones",
+    title: "Queen of Air and Darkness",
     author: "Cassandra Clare",
-    image: "img/im2.jpg",
-    desc: `When fifteen-year-old Clary Fray heads out to the Pandemonium Club in New York City, she hardly expects to witness a murder -- much less a murder committed by three teenagers covered with strange tattoos and brandishing bizarre weapons. Then the body disappears into thin air. It's hard to call the police when the murderers are invisible to everyone else and when there is nothing -- not even a smear of blood -- to show that a boy has died. Or was he a boy?`,
+    image: "img/im7.jpg",
+    desc: `What if damnation is the price of true love?
+
+    Innocent blood has been spilled on the steps of the Council Hall, the sacred stronghold of the Shadowhunters. Their society now teeters on the brink of civil war. One fragment of the Blackthorn family flees to Los Angeles, seeking to discover the source of the disease that is destroying the race of warlocks. Meanwhile, Julian and Emma take desperate measures to put their forbidden love aside and undertake a perilous mission to Faerie to retrieve the Black Volume of the Dead. What they find there is a secret that may tear the Shadow World asunder and open a dark path into a future they could never have imagined. Caught in a race against time, Emma and Julian must save the world of the Shadowhunters before a deadly curse destroys them and everyone they love.`,
   },
 ];
 
@@ -60,6 +66,7 @@ let inp = document.querySelector(".search");
 let inpVal = inp.value.toUpperCase();
 let sec = document.getElementById("cards");
 let hed = document.querySelector("header");
+let sec2 = document.querySelector(".slider");
 
 // functions
 
@@ -79,40 +86,39 @@ let hed = document.querySelector("header");
 let renderBooks = () => {
   for (let i = 0; i < books.length; i++) {
     sec.innerHTML += `
-            <div id="slide${i}" class="card1">
+            <div id="${i}" class="card1">
             <img src="${books[i].image}" alt="" class="img1"/>
             <i class="bi "bi-star" change"></i>
-            <button id="more${i}" class="more-bttn">Read More...</button>
+            <button id="more${i}" onclick='showMore(${i})' class="more-bttn">Read More...</button>
           </div>`;
   }
-  
-  let cards = document.querySelectorAll(".card1");
-  cards.forEach((card) =>
-    card.addEventListener("click", (ev) => {
-      const targ = ev.target;
-      console.log(targ);
-        if ((targ.classList[0] += "more-bttn")) {
-          sec.style.display = "none";
-          hed.style.display = "none";
-        }
-    })
-  );
 };
-{
-  /* <i class="bi bi-arrow-left-circle-fill prev"></i>
-          <i class="bi bi-arrow-right-circle-fill next"></i> */
-}
 
 renderBooks();
 
 // description
 
+const showMore = (i) => {
+  sec.style.display = "none";
+  hed.style.display = "none";
+  sec2.innerHTML = `
+          <div id="slide${i}" class="fav-sec">
+          <img src="${books[i].image}" alt="" class="img"/>
+          <h1>${books[i].title}</h1>
+          <h3>by: ${books[i].author}</h3>
+          <p>${books[i].desc}</p>
+          <i id="star-${i}" class="bi bi-star" onclick='showMore(${i})'></i>
+        </div>`;
+};
+
 // favorite
-// let fav = document.querySelector(".change");
-// fav.addEventListener("click", (e) => {
-//     if (fav.contains("bi-star")) {
-//         fav.classList.remove("bi-star");
+let fav = document.querySelector(`#star-${i}`);
+console.log(fav);
 
-//     }
+let fav = (i) => {
+    if (fav.contains("bi-star")) {
+        fav.classList.remove("bi-star");
 
-// });
+    }
+
+});
