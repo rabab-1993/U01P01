@@ -60,36 +60,44 @@ let books = [
   },
 ];
 
+
+
 //  Declare variables
 
-let inp = document.querySelector(".search");
-let inpVal = inp.value.toUpperCase();
+let input = document.querySelector(".search");
+let inpVal = input.value.toUpperCase();
 let sec = document.getElementById("cards");
 let hed = document.querySelector(".search-sec");
 let sec2 = document.querySelector(".slider");
 
 // functions
 
+// search books section
+let searchList = [];
+input.addEventListener("input", (ev) => {
+  console.log(inpVal);
+})
+
 // let searchBooks = () => {
-//     books.forEach(element => {
-//         if (books[element].title.includes(inpVal) || books[inv].author.includes(inpVal)) {
+//     books.forEach((i) => {
+//         if (books[0].title.includes(inpVal) || books[inv].author.includes(inpVal)) {
 
 //         }
 //     });
 
-//     // for (let i = 0; i < books.length[0]; i++) {
-//     //     books.filter(inpVal)
-//     // }
+//     for (let i = 0; i < books.length[0]; i++) {
+//         books.filter(inpVal)
+//     }
 // }
+
 // searchBooks()
 
+sec.innerHTML = `<h1 class="sec-title">Trending Books</h1>`;
 let renderBooks = () => {
-  sec.innerHTML = `<h1 class="sec-title">Trending Books</h1>`;
   for (let i = 0; i < books.length; i++) {
     sec.innerHTML += ` 
             <div id="${i}" class="card1">
             <img src="${books[i].image}" alt="" class="img1"/>
-            <i class="bi "bi-star" change"></i>
             <button id="more${i}" onclick='showMore(${i})' class="more-bttn">Read More...</button>
           </div>`;
   }
@@ -97,27 +105,32 @@ let renderBooks = () => {
 
 renderBooks();
 
-// favorite
+// favorite section
 let fav = (i) => {
   let star = document.querySelector(`#star-${i}`);
    star.classList.remove("bi-star");
    star.classList.toggle("bi-star-fill");
+
+ 
   // if (star.contains == "bi-star") {
+  //   star.classList.replace("bi-star", "bi-star-fill");
+  //  star.classList.toggle("bi-star-fill");
    
-  // } 
-  // else {
+  // }else {
+  //   star.classList.replace("bi-star-fill", "bi-star");
   //   star.classList.remove("bi-star-fill");
   //   star.classList.add("bi-star");
   // }
 };
 
-//  let unfav = (i) => {
-//   let star1 = document.querySelector(`#star-${i}`);
-//   star1.classList.remove('bi-star-fill')
-//   star1.classList.add('bi-star');
-//  }
+ let unfav = (i) => {
+  let star1 = document.querySelector(`#star-${i}`);
+  star1.classList.remove('bi-star-fill')
+  star1.classList.add('bi-star');
+  
+ }
 
-// description
+// description section
 
 const showMore = (i) => {
   sec.style.display = "none";
@@ -131,3 +144,8 @@ const showMore = (i) => {
           <i onclick='fav(${i})' id="star-${i}" class="bi bi-star"></i>
         </div>`;
 };
+
+// localstorage section
+localStorage.setItem("favorite", JSON.stringify(books))
+let favItem = localStorage.getItem("favorite");
+let favObj = JSON.parse(favItem);

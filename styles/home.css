@@ -35,7 +35,7 @@ body {
 }
 
 .logos h2 {
-  margin: -2rem 0 0 4rem;
+  /* margin: -2rem 0 0 4rem; */
   color: #4088b1;
   font-weight: bolder;
 }
@@ -69,6 +69,18 @@ li a {
     text-decoration: none;
     color: #5eb0b9;
 }
+
+.bi-heart-fill {
+  cursor: pointer;
+}
+
+li:hover {
+  height: 3.5rem;
+  background: #145277;
+  border-radius: 10px;
+}
+
+a:hover {color: #fff;}
 /* search sec */
 
 .search-sec {
@@ -78,8 +90,8 @@ li a {
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.5), rgb(255, 255, 255, 0.1));
   border-radius: 20px;
   width: 60rem;
-  margin: auto;
-  margin-top: 8rem;
+  margin: 10rem;
+  
   padding-top: 4rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -133,6 +145,7 @@ form {
 }
 .sec-title {
   color: #fff;
+  display: flex;
 }
 
 .card1 {
@@ -171,13 +184,13 @@ form {
   transition: 0.7s ease;
 }
 
-.img1:hover{
-  transform: translateZ(20px);
-}
+.img1:hover{transform: translateZ(20px);}
 
 .card1:hover .more-bttn{
     opacity: 1;
-    transform: translateZ(20px);
+    transform: translateZ(2px);
+    /* top: 85%;
+    right: 0; */
 } 
 
 .more-bttn {
@@ -193,7 +206,6 @@ form {
   font-weight: bolder;
   cursor: pointer;
   opacity: 0;
-  transition: 0.7s ease;
   color: #fff;
 }
 
