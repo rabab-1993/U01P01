@@ -59,7 +59,7 @@
       text-decoration: none;
       color: #fff;
   }
-  a:hover, .bi-heart-fill:hover {color: #145277; cursor: pointer;}
+  a:hover {color: #145277; cursor: pointer;}
 
 /* form section */
 .img-letr {

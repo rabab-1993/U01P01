@@ -75,29 +75,12 @@ let sec = document.getElementById("cards");
 let hed = document.querySelector(".search-sec");
 let sec2 = document.querySelector(".slider");
 let favIcon = document.getElementById("fav-icon");
-let favList = document.querySelector(".fav-list");
+let container = document.getElementById("container");
+
 
 // functions
 
-// search books section
-let searchList = [];
-input.addEventListener("input", (ev) => {
-  console.log(inpVal);
-});
-
-// let searchBooks = () => {
-//     books.forEach((i) => {
-//         if (books[0].title.includes(inpVal) || books[inv].author.includes(inpVal)) {
-
-//         }
-//     });
-
-//     for (let i = 0; i < books.length[0]; i++) {
-//         books.filter(inpVal)
-//     }
-// }
-
-// searchBooks()
+// render books section
 
 sec.innerHTML = `<h1 class="sec-title">Trending Books</h1>`;
 let renderBooks = () => {
@@ -129,10 +112,19 @@ let fav = (i) => {
 favIcon.addEventListener("click", () => {
   sec.style.display = "none";
   hed.style.display = "none";
-   favList.innerHTML = `${books}`
-  // `<img src="${books[i].image}" alt="" class="img"/>
-  //  <h1>${books[i].title}</h1>
-  //  <h3>by: ${books[i].author}</h3>`;
+  sec2.style.display = "none";
+  books.forEach((element) => {
+    if (element.favourite === true) {
+      console.log(element);
+      container.innerHTML += `
+      <section class="fav-list">
+      <div class="fav">
+      <img src="${element.image}" alt="" class="img"/>
+      <h1>${element.title}</h1>
+      </div>
+      </section>`;
+    }
+  });
 });
 
 // description section
