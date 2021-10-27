@@ -21,10 +21,12 @@ let books = JSON.parse(localStorage.getItem("favorite")) || [
   },
   {
     id: 2,
-    title: "The Hunger Games ",
-    author: "Suzanne Collins",
-    image: "img/im3.jpg",
-    desc: `Sixteen-year-old Katniss Everdeen regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to death before-and survival, for her, is second nature. Still, if she is to win, she will have to start making choices that weigh survival against humanity and life against love.`,
+    title: "Queen of Air and Darkness",
+    author: "Cassandra Clare",
+    image: "img/im7.jpg",
+    desc: `What if damnation is the price of true love?
+
+    Innocent blood has been spilled on the steps of the Council Hall, the sacred stronghold of the Shadowhunters. Their society now teeters on the brink of civil war. One fragment of the Blackthorn family flees to Los Angeles, seeking to discover the source of the disease that is destroying the race of warlocks. Meanwhile, Julian and Emma take desperate measures to put their forbidden love aside and undertake a perilous mission to Faerie to retrieve the Black Volume of the Dead. What they find there is a secret that may tear the Shadow World asunder and open a dark path into a future they could never have imagined. Caught in a race against time, Emma and Julian must save the world of the Shadowhunters before a deadly curse destroys them and everyone they love.`,
     favourite: false,
   },
   {
@@ -57,14 +59,13 @@ let books = JSON.parse(localStorage.getItem("favorite")) || [
   },
   {
     id: 6,
-    title: "Queen of Air and Darkness",
-    author: "Cassandra Clare",
-    image: "img/im7.jpg",
-    desc: `What if damnation is the price of true love?
-
-    Innocent blood has been spilled on the steps of the Council Hall, the sacred stronghold of the Shadowhunters. Their society now teeters on the brink of civil war. One fragment of the Blackthorn family flees to Los Angeles, seeking to discover the source of the disease that is destroying the race of warlocks. Meanwhile, Julian and Emma take desperate measures to put their forbidden love aside and undertake a perilous mission to Faerie to retrieve the Black Volume of the Dead. What they find there is a secret that may tear the Shadow World asunder and open a dark path into a future they could never have imagined. Caught in a race against time, Emma and Julian must save the world of the Shadowhunters before a deadly curse destroys them and everyone they love.`,
+    title: "The Hunger Games ",
+    author: "Suzanne Collins",
+    image: "img/im3.jpg",
+    desc: `Sixteen-year-old Katniss Everdeen regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to death before-and survival, for her, is second nature. Still, if she is to win, she will have to start making choices that weigh survival against humanity and life against love.`,
     favourite: false,
   },
+  
 ];
 
 //  Declare variables
@@ -72,30 +73,50 @@ let books = JSON.parse(localStorage.getItem("favorite")) || [
 let input = document.querySelector(".search");
 let inpVal = input.value.toUpperCase();
 let sec = document.getElementById("cards");
-let hed = document.querySelector(".search-sec");
+let searcForm = document.querySelector(".search-sec");
 let sec2 = document.querySelector(".slider");
 let favIcon = document.getElementById("fav-icon");
-let container = document.getElementById("container");
+let container = document.querySelector('#container')
+let cardsTitle = document.querySelector('.sec-title')
 
 
 // functions
 
-// render books section
+// search books section
+// let searchList = [];
+// input.addEventListener("input", (ev) => {
+//   console.log(inpVal);
+// });
 
-sec.innerHTML = `<h1 class="sec-title">Trending Books</h1>`;
+// let searchBooks = () => {
+//     books.forEach((i) => {
+//         if (books[0].title.includes(inpVal) || books[inv].author.includes(inpVal)) {
+
+//         }
+//     });
+
+//     for (let i = 0; i < books.length[0]; i++) {
+//         books.filter(inpVal)
+//     }
+// }
+
+// searchBooks()
+
+
 let renderBooks = () => {
   for (let i = 0; i < books.length; i++) {
     sec.innerHTML += ` 
-            <div id="${i}" class="card1">
-            <img src="${books[i].image}" alt="" class="img1"/>
-            <button id="more${i}" onclick='showMore(${i})' class="more-bttn">Read More...</button>
-          </div>`;
+    <div id="${i}" class="card1">
+    <img src="${books[i].image}" alt="" class="img1"/>
+    <button id="more${i}" onclick='showMore(${i})' class="more-bttn">Read More...</button>
+    </div>`;
   }
 };
 
 renderBooks();
 
-// favorite section
+
+// favorite bttn
 let fav = (i) => {
   let star = document.querySelector(`#star-${i}`);
   books[i].favourite = !books[i].favourite;
@@ -108,21 +129,28 @@ let fav = (i) => {
     star.classList.add("bi-star");
   }
 };
+
+
+
 // favorite page
 favIcon.addEventListener("click", () => {
   sec.style.display = "none";
-  hed.style.display = "none";
+  searcForm.style.display = "none";
   sec2.style.display = "none";
+  cardsTitle.style.display = "none";
+  // container.innerHTML = `<section class="fav-list"></section>`;
+ let favList = document.createElement('section');
+ favList.classList.add('fav-list');
+ container.appendChild(favList);
+ favList.innerHTML = `<h2 class="fav-title">Favorites :</h2>`;
   books.forEach((element) => {
     if (element.favourite === true) {
       console.log(element);
-      container.innerHTML += `
-      <section class="fav-list">
+      favList.innerHTML += `
       <div class="fav">
-      <img src="${element.image}" alt="" class="img"/>
+     <img src="${element.image}" alt="" class="img fav-imgs"/>
       <h1>${element.title}</h1>
-      </div>
-      </section>`;
+      </div>`;
     }
   });
 });
@@ -131,7 +159,8 @@ favIcon.addEventListener("click", () => {
 
 const showMore = (i) => {
   sec.style.display = "none";
-  hed.style.display = "none";
+  searcForm.style.display = "none";
+  cardsTitle.style.display = "none";
   sec2.innerHTML = `
           <div id="slide${i}" class="fav-sec">
           <img src="${books[i].image}" alt="" class="img"/>

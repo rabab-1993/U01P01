@@ -15,11 +15,13 @@
   /* nav bar */
   
   .cat-logo {
-    margin: 3rem 0 0 6rem;
+    position: absolute;
+    top: 30%;
+    right: 85%;
     border-radius: 50%;
-    height: 4rem;
+    height: 5rem;
     background: #fff;
-    box-shadow: rgb(0, 0, 0) 0px 13px 27px -5px,
+    box-shadow: rgb(0, 0, 0) 0px 10px 15px -5px,
       rgba(255, 255, 255, 0) 0px 8px 16px -8px;
   }
 
@@ -64,19 +66,27 @@
   
   /* section */
   .about {
-    background: linear-gradient(150deg,#6ba9af, #145277, #05668d86);
+    background: linear-gradient(150deg,#6ba9af8a, #145377, #05668d86);
     border-radius: 20px;
-    width: 50rem;
+    width: 40rem;
     height: auto;
     position: absolute;
     left: 20%;
-    top: 40%;
+    top: 50%;
     
   }
+
+.about-img {
+    height: 27rem;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+}
+
   .about p {
     margin: 3rem;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: justify;
    
   }
