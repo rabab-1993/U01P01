@@ -14,17 +14,12 @@
   /* nav bar */
   
   .cat-logo {
-    margin: 30px 0 0 6rem;
+    margin: 3rem 0 0 6rem;
     border-radius: 50%;
-    height: 5rem;
-    background: #5eb0b9;
+    height: 4rem;
+    background: #fff;
     box-shadow: rgb(0, 0, 0) 0px 13px 27px -5px,
       rgba(255, 255, 255, 0) 0px 8px 16px -8px;
-  }
-  
-  .logos h2 {
-    margin: -2rem 0 0 4rem;
-    font-weight: bolder;
   }
   
   nav {
@@ -64,6 +59,7 @@
       text-decoration: none;
       color: #fff;
   }
+  a:hover, .bi-heart-fill:hover {color: #145277; cursor: pointer;}
 
 /* form section */
 .img-letr {
@@ -111,7 +107,7 @@ footer {
   }
   
   footer p {
-    padding-top: 2.5rem;
+    padding-top: 2rem;
     text-align: center;
     font-size: larger;
   }
