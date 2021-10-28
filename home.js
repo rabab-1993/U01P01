@@ -65,6 +65,38 @@ let books = JSON.parse(localStorage.getItem("favorite")) || [
     desc: `Sixteen-year-old Katniss Everdeen regards it as a death sentence when she steps forward to take her sister's place in the Games. But Katniss has been close to death before-and survival, for her, is second nature. Still, if she is to win, she will have to start making choices that weigh survival against humanity and life against love.`,
     favourite: false,
   },
+  {
+    id: 7,
+    title: "The Shining ",
+    author: "Stephen King",
+    image: "img/im8.jpg",
+    desc: `Jack Torrance’s new job at the Overlook Hotel is the perfect chance for a fresh start. As the off-season caretaker at the atmospheric old hotel, he’ll have plenty of time to spend reconnecting with his family and working on his writing. But as the harsh winter weather sets in, the idyllic location feels ever more remote . . . and more sinister. And the only one to notice the strange and terrible forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-year-old.`,
+    favourite: false,
+  },
+  {
+    id: 8,
+    title: "The Midnight Library ",
+    author: "Matt Haig",
+    image: "img/im9.jpg",
+    desc: `Somewhere out beyond the edge of the universe there is a library that contains an infinite number of books, each one the story of another reality. One tells the story of your life as it is, along with another book for the other life you could have lived if you had made a different choice at any point in your life. While we all wonder how our lives might have been, what if you had the chance to go to the library and see for yourself? Would any of these other lives truly be better?
+
+    In The Midnight Library, Matt Haig's enchanting blockbuster novel, Nora Seed finds herself faced with this decision. Faced with the possibility of changing her life for a new one, following a different career, undoing old breakups, realizing her dreams of becoming a glaciologist; she must search within herself as she travels through the Midnight Library to decide what is truly fulfilling in life, and what makes it worth living in the first place.`,
+    favourite: false,
+  },
+  {
+    id: 9,
+    title: "The Year of the Witching  ",
+    author: "Alexis Henderson",
+    image: "img/im10.jpg",
+    desc: `A young woman living in a rigid, puritanical society discovers dark powers within herself in this stunning, feminist fantasy debut.
+ 
+    In the lands of Bethel, where the Prophet's word is law, Immanuelle Moore's very existence is blasphemy. Her mother’s union with an outsider of a different race cast her once-proud family into disgrace, so Immanuelle does her best to worship the Father, follow Holy Protocol, and lead a life of submission, devotion, and absolute conformity, like all the other women in the settlement.
+    
+    But a mishap lures her into the forbidden Darkwood surrounding Bethel, where the first prophet once chased and killed four powerful witches. Their spirits are still lurking there, and they bestow a gift on Immanuelle: the journal of her dead mother, who Immanuelle is shocked to learn once sought sanctuary in the wood.
+    
+    Fascinated by the secrets in the diary, Immanuelle finds herself struggling to understand how her mother could have consorted with the witches. But when she begins to learn grim truths about the Church and its history, she realizes the true threat to Bethel is its own darkness. And she starts to understand that if Bethel is to change, it must begin with her.`,
+    favourite: false,
+  },
   
 ];
 

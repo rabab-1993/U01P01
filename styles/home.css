@@ -14,7 +14,7 @@
 
 .cat-logo {
   position: absolute;
-  top: 34%;
+  top: 16%;
   right: 85%;
   border-radius: 50%;
   height: 5rem;
@@ -25,7 +25,7 @@
 
 nav {
   position: fixed;
-  height: 8.5rem;
+  height: 7rem;
   bottom: 30rem;
   width: 100%;
   display: flex;
@@ -46,13 +46,13 @@ nav {
 }
 
 ul {
-  margin: 3rem;
+  margin: 1.5rem;
   display: flex;
   list-style: none;
 }
 
 li {
-  padding: 24px;
+  padding: 22px;
   font-weight: bold;
   font-size: larger;
 }
@@ -132,7 +132,7 @@ form {
   height: 20rem;
   display: flex;
   margin: 10rem 0;
-  width: calc(120px * 18);
+  width: calc(180px * 18);
   animation: scroll 50s linear infinite;
 
 }
